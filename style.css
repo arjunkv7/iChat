@@ -1,0 +1,61 @@
+.logo {
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+}
+
+.container {
+    max-width: 955px;
+    margin: auto;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.message {
+    background-color: rgb(142, 176, 89);
+    width: 25%;
+    padding: 10px;
+    margin: 17px 12px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.left {
+    float: left;
+    clear: both;
+}
+
+.right {
+    float: right;
+    clear: both;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+body {
+    background-image: linear-gradient(rgb(126, 134, 241), rgb(231, 129, 231));
+}
