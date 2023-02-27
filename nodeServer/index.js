@@ -9,9 +9,13 @@ const io = require("socket.io")(8000, {
 const users = {};
 
 io.on("connection", socket => {
+    //rooms
     socket.on("new-user-joined", name => {
         users[socket.id] = name;
-        
+        socket.join("room", () => {
+            console.log("client joined in the new room");
+        });
+    
         console.log(`New user ${name } joined`);
         console.log(users);
         socket.broadcast.emit('user-joined', name);
@@ -19,6 +23,7 @@ io.on("connection", socket => {
 
     socket.on('send', message => {
         console.log(message);
+        socket.to('room').emit("emit");
         socket.broadcast.emit("receive", { message: message, user: users[socket.id] })
     });
 
@@ -28,9 +33,7 @@ io.on("connection", socket => {
     });
 });
 
-io.on("disconnect", socket =>{
-    console.log("disconnected")
-})
+
 
 
 

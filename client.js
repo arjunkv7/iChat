@@ -22,7 +22,9 @@ let append = (name,position) => {
     messageContainer.append(messageElement)
     
 }
-
+socket.emit("room", () => {
+    console.log("hii new room")
+});
 socket.emit("new-user-joined", name);
 
 socket.on('user-joined', message => {
@@ -30,6 +32,10 @@ socket.on('user-joined', message => {
     append(`${message} joined the chat`, "left")
     console.log(message)
 });
+
+socket.on("emit", message => {
+    append(`Hi this message is from room`)
+})
 
 socket.on('receive', data => {
     console.log("log")
